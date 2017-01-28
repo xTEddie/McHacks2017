@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,31 +17,32 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     <![endif]-->
 </head>
 <body>
 
+
 <div class="container-fluid" align="center">
 
     <div class="row" id="head">
-
-        <h1>Youtube Word Finder</h1>
-
+        <h1 style="color: #BC8F8F; position: absolute; font-variant:small-caps; left: 20px;top: 10px;">Yoo<strong>GLE</strong></h1>
     </div>
 
-    <form id="user-info" class="form-inline row">
+    <br><br>
 
-        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="keyword-search" placeholder="Keyword Search">
+    <form id="user-info" class="form-inline row" method="POST" action="/searchKeyWord">
 
-        <input type="url" class="form-control mb-2 mr-sm-2 mb-sm-0" id="youtube-url" placeholder="Youtube URL">
+        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="keyword" placeholder="Keyword Search">
+
+        <input type="url" class="form-control mb-2 mr-sm-2 mb-sm-0" id="url" placeholder="Youtube URL">
 
         <button type="submit" class="btn btn-primary">Search</button>
 
     </form>
 
-    <div id="list-of-times" class="row well">
-
-    </div>
+    <br><br>
 
     <div class="row">
 
