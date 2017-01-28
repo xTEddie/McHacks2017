@@ -1,5 +1,7 @@
 from flask import Flask, redirect, request, render_template
 
+# from youtube_transcriber
+
 app = Flask(__name__)
 
 
@@ -8,11 +10,15 @@ def home():
     return render_template('index.html')
 
 
-# @app.route('/searchWord')
-# def searchWord():
-#     if LOGIN:
-#         return render_template('contactprofile.html')
-#     return render_template('contact.html')
+@app.route('/searchWord',  methods=['POST'])
+def searchWord():
+    """
+    Expected receiving the keyWord and youtubeURL.
+    :return:
+    """
+    keyWord = request.form['keyword']
+    yURL = request.form['url']
+
 
 if __name__ == '__main__':
     app.run()
