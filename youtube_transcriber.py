@@ -1,31 +1,50 @@
 import requests
+from urllib.parse import urlparse, parse_qs
 from xml.etree import ElementTree
 
 OK = 200
 
 
-def transcribe_video(id):
+def get_video_id(url):
+    """ Get YouTube video ID from YouTube URL
+
+    Args:
+        url (str): YouTube URL.
+
+    Returns:
+        YouTube id
+    """
+
+    if not url:
+        return ""
+
+    parse_result = urlparse(url)
+    query = parse_qs(parse_result.query)
+    return query["v"][0]
+
+
+def transcribe_video(youtube_url):
     """ Transcribe YouTube video.
 
     Args:
-        id (str): Video ID.
+        youtube_url (str): YouTube URL.
 
     Returns:
         tuple (HTTP response code, response content)
     """
 
+    id = get_video_id(youtube_url)
     url = "http://video.google.com/timedtext?lang=en&v={}".format(id)
     response = requests.get(url)
 
     return response.status_code, response.content
 
 
-def search_keywords(id, keyword):
+def search_keywords(youtube_url, keyword):
     """ Search for keyword in a YouTube video.
 
     Args:
-        id (str): Video ID.
-        keyword (str): Keyword.
+        youtube_url (str): YouTube URL.
 
     Returns:
         list of timestamp in second(s).
@@ -33,7 +52,13 @@ def search_keywords(id, keyword):
 
     timestamps = list()
 
-    status_code, content = transcribe_video(id)
+    if not keyword or not youtube_url:
+        return timestamps
+
+    status_code, content = transcribe_video(youtube_url)
+
+    if not content:
+        return timestamps
 
     if status_code == OK:
 
@@ -50,7 +75,7 @@ def search_keywords(id, keyword):
 
 
 if __name__ == '__main__':
-    id = "EeQ8pwjQxTM"
+    url = "https://www.youtube.com/watch?v=EeQ8pwjQxTM"
     keyword = "sort"
-    timestamps = search_keywords(id, keyword)
+    timestamps = search_keywords(url, keyword)
     print(timestamps)
