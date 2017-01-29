@@ -1,15 +1,23 @@
-h1 {
-	font-family: "Arial Narrow";
-	font-color: #b31217;
-}
-h1.gle{
-	font-family: "Futura";
-	font-color: #b31217;
+body {
+	font-family: Arial;
+	font-color:#000000;
+	background-color: #f1f1f1;
+
 }
 
-#user-info{
+h1 {
 	font-family: "Roboto";
+	font-color: #b31217;
+	font-size: 60px;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	border-radius: 10px;
+  	background: #b31217;
+  	padding-left: 15px;
+  	padding-right: 15px;
+  	padding-bottom: 10px;
 }
+
+
 
 #youtube-video{
 	background-color: #000000;
