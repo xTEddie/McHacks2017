@@ -14,15 +14,19 @@ def home():
 def searchKeyWord():
     """
     Expected receiving the keyWord and youtubeURL.
-    :return: None
+    :return: jonson time list back to javascript
     """
-
     url = request.form["url"]
     keyword = request.form["keyword"]
     return json.dumps(timeStamp(search_keywords(url, keyword)))
 
 
 def timeStamp(list_time):
+    """
+    Format time stam into `00h00m00s` into the dictionary
+    :param list_time: float list of time stamp in second
+    :return format_time: dictionary of format time
+    """
     format_time = dict()
     i = 0
     for time in list_time:
