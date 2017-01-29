@@ -19,7 +19,13 @@ def searchKeyWord():
 
     url = request.form["url"]
     keyword = request.form["keyword"]
-    return json.dumps(timeStamp(search_keywords(url, keyword)))
+
+    result = search_keywords(url, keyword)
+
+    if not result:
+        return json.dump(dict())
+
+    return jsonify(timeStamp(result))
 
 
 def timeStamp(list_time):
@@ -28,7 +34,7 @@ def timeStamp(list_time):
     for time in list_time:
         m, s = divmod(time, 60)
         h, m = divmod(m, 60)
-        format_time[str(i)] = "%dh%02dm%02ds" % (h, m, s)
+        format_time[str(i)] = {"%dh%02dm%02ds" % (h, m, s): time}
         i += 1
     return format_time
 
