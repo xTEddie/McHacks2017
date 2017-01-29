@@ -19,8 +19,8 @@ def searchKeyWord():
     Expected receiving the keyWord and youtubeURL.
     :return:
     """
-    keyWord = request.form['keyword']
-    yURL = request.form['url']
+    keyWord = request.arg.get('keyword')
+    yURL = request.arg.get('url')
     timeStamp(search_keywords(keyWord, yURL))
 
 
@@ -30,7 +30,7 @@ def timeStamp(list_time):
         m, s = divmod(time, 60)
         h, m = divmod(m, 60)
         format_time.append("%d:%02d:%02d" % (h, m, s))
-
+    return jsonify
 
 if __name__ == '__main__':
     app.run()
