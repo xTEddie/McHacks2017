@@ -18,6 +18,10 @@ def get_video_id(url):
     if not url:
         return ""
 
+    # If URL is embedded
+    if "embed" in url:
+        return url.split("/")[-1]
+
     parse_result = urlparse(url)
     query = parse_qs(parse_result.query)
     return query["v"][0]
