@@ -39,6 +39,7 @@ def transcribe_video(youtube_url):
 
     id = get_video_id(youtube_url)
     url = "http://video.google.com/timedtext?lang=en&v={}".format(id)
+    print(url)
     response = requests.get(url)
 
     return response.status_code, response.content
@@ -71,7 +72,7 @@ def search_keywords(youtube_url, keyword):
 
         for node in tree:
 
-            if keyword in node.text:
+            if keyword.lower() in node.text.lower():
                 print(node.text)
                 print(node.attrib)
                 timestamps.append(float(node.attrib["start"]))
