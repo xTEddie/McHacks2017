@@ -1,8 +1,14 @@
 h1 {
-	font-family: "Roboto", Arial, sans-serif;
+	font-family: "Arial Narrow";
+	font-color: #b31217;
 }
 h1.gle{
-	font-family: "Relish Pro", "Futura", sans-serif;
+	font-family: "Futura";
+	font-color: #b31217;
+}
+
+#user-info{
+	font-family: "Roboto";
 }
 
 #youtube-video{
