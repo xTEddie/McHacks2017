@@ -1,11 +1,17 @@
 $(document).ready(function() {
 
-  $("#submit-user-info").on("click", function() {
+  $("#user-info").on("submit", function() {
+        event.preventDefault();        
 
-        var bla = $('#youtube-url').val();
+        var url = $("#youtube-url").val();        
+        
+        if(url.search("youtube") >= 1){
+            if(url.search('embed') === -1){
+                url = "https://www.youtube.com/embed/" + url.split("watch?v=")[1];
+            }
+        }        
 
-        $("#embeded-video").attr("src", bla);
-
+        $("#embedded-video").attr("src", url);        
   });
 
 });

@@ -33,11 +33,11 @@
             <br><br>
 
             <div>
-              <form id="user-info" class="form-inline row" method="POST" action="/searchKeyWord">
+              <form id="user-info" class="form-inline row">
 
                   <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="keyword" placeholder="Keyword Search">
 
-                  <input type="url" class="form-control mb-2 mr-sm-2 mb-sm-0" name="url" placeholder="Youtube URL">
+                  <input type="url" id="youtube-url" class="form-control mb-2 mr-sm-2 mb-sm-0" name="url" placeholder="Youtube URL">
 
                   <button id="submit-user-info" type="submit" class="btn btn-primary">Search</button>
               </form>
@@ -46,10 +46,10 @@
             <br><br>
 
             <div class="row">                
-                    <div id="youtube-video">
-                        <iframe id="embedded-video" width="854" height="480" src="https://www.youtube.com/embed/zSWdZVtXT7E" frameborder="0"
-                                allowfullscreen></iframe>
-                    </div>        
+                <div id="youtube-video">
+                    <iframe id="embedded-video" width="854" height="480" src="https://www.youtube.com/embed/zSWdZVtXT7E" frameborder="0"
+                            allowfullscreen></iframe>
+                </div>        
             </div>
         </div>
     </body>
