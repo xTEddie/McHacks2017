@@ -20,6 +20,7 @@ $(document).ready(function() {
         if(keyword.length == 0) return;
         console.log(keyword);
 
+        var results = $("#results");
         results.html(""); // Delete content in table
         
         var url = $("#embedded-video").attr("src");
@@ -33,8 +34,7 @@ $(document).ready(function() {
                 "keyword": keyword
             },
             success: function(data){
-                // Write logic to render buttons for time                
-                var results = $("#results");
+                // Write logic to render buttons for time                                
 
                 var data_size = Object.keys(data).length;                
 
