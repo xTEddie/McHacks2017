@@ -1,11 +1,10 @@
 #youtube-video{
 	background-color: #000000;
-	max-width: 854px;
-	max-height: 480px;
+	width: 100%;
+
 }
 
-#vid{
-	width: 100%; 
-	height: 100%;
+#embedded-video{
+
 	align-items: center;
 }
