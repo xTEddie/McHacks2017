@@ -31,6 +31,7 @@ $(document).ready(function() {
                 "keyword": keyword
             },
             success: function(data){
+                // Write logic to render buttons for time
                 console.log(data);
             }
         });

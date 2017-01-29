@@ -1,5 +1,5 @@
+import json
 from flask import Flask, redirect, request, render_template, jsonify
-
 from youtube_transcriber import search_keywords
 
 app = Flask(__name__)
@@ -19,7 +19,7 @@ def searchKeyWord():
 
     url = request.form["url"]
     keyword = request.form["keyword"]
-    timeStamp(search_keywords(url, keyword))
+    return json.dumps(timeStamp(search_keywords(url, keyword)))
 
 
 def timeStamp(list_time):
@@ -28,7 +28,7 @@ def timeStamp(list_time):
     for time in list_time:
         m, s = divmod(time, 60)
         h, m = divmod(m, 60)
-        format_time[str(i)] = "%dh:%02dm:%02ds" % (h, m, s)
+        format_time[str(i)] = "%dh%02dm%02ds" % (h, m, s)
         i += 1
     return format_time
 
