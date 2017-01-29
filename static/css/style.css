@@ -1,27 +1,22 @@
-#top{
-	width: 100%;
-	display: inline-block;
-}
 
 body {
 	font-family: Arial;
-	font-color:#000000;
+	font-color: #000000;
 	background-color: #f1f1f1;
 }
 
 h1 {
 	font-family: "Roboto";
-	font-color: #b31217;
-	font-size: 60px;
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 	border-radius: 10px;
-  	background: #b31217;
-  	padding-left: 15px;
-  	padding-right: 15px;
-  	padding-bottom: 10px;
+  background: #b31217;
+  padding-bottom: 10px;
+	padding-top: 5px;
+	padding-left: 20px;
+	min-width: 150px;
+	max-width: 150px;
+	margin-left: 15px;
 }
-
-
 
 #youtube-video{
 	background-color: #000000;
@@ -32,12 +27,8 @@ h1 {
 	align-items: center;
 }
 
-@media screen and (max-width: 768px){
-	#top{
-		span:last-of-type {
-        display: block;}
-	#user-info{
-		margin:40px;
+#footer {
 
-	}	
+	color: #FFFFFF;
+	
 }
