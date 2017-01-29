@@ -30,9 +30,12 @@ h1 {
 #footer {
 
 	color: #FFFFFF;
-	
+
 }
 
 #results {
+
 	background-color: transparent;
+	border: none;
+
 }
