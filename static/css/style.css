@@ -1,8 +1,12 @@
+#top{
+	width: 100%;
+	display: inline-block;
+}
+
 body {
 	font-family: Arial;
 	font-color:#000000;
 	background-color: #f1f1f1;
-
 }
 
 h1 {
@@ -22,10 +26,18 @@ h1 {
 #youtube-video{
 	background-color: #000000;
 	width: 100%;
-
 }
 
 #embedded-video{
-
 	align-items: center;
+}
+
+@media screen and (max-width: 768px){
+	#top{
+		span:last-of-type {
+        display: block;}
+	#user-info{
+		margin:40px;
+
+	}	
 }
