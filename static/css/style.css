@@ -1,6 +1,7 @@
 
 body {
 	font-family: Arial;
+	font-color: #000000;
 	background-color: #f1f1f1;
 }
 
@@ -16,13 +17,6 @@ h1 {
 	max-width: 150px;
 	margin-left: 15px;
 }
-
-#head {
-
-
-}
-
-
 
 #youtube-video{
 	background-color: #000000;
