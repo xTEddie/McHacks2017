@@ -42,7 +42,7 @@ $(document).ready(function() {
                 
                 $.each(data, function(index, value){   
                     var key = Object.keys(value)[0];                                     
-                    output += "<button type='button' class='btn btn-danger timestamp' value='" + value[key] + "'>&nbsp" + key + "</button>&nbsp";
+                    output += "<button type='button' class='btn btn-danger timestamp' value='" + value[key] + "'>" + '<i class="fa fa-play" aria-hidden="true"></i>&nbsp' +  '<span style="color:black;">' + key + "</span>" + "</button>&nbsp";
                     
                     if((parseInt(index) + 1) % 5 == 0){
                         output += "<br>";
