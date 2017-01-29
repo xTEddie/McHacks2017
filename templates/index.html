@@ -32,15 +32,19 @@
 
     <br><br>
 
-    <form id="user-info" class="form-inline row" method="POST" action="/searchKeyWord">
+    <div>
 
-        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="keyword" placeholder="Keyword Search">
+      <form id="user-info" class="form-inline row" method="POST" action="/searchKeyWord">
 
-        <input type="url" class="form-control mb-2 mr-sm-2 mb-sm-0" id="url" placeholder="Youtube URL">
+          <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="keyword" placeholder="Keyword Search">
 
-        <button type="submit" class="btn btn-primary">Search</button>
+          <input type="url" class="form-control mb-2 mr-sm-2 mb-sm-0" name="url" placeholder="Youtube URL">
 
-    </form>
+          <button id="submit-user-info" type="submit" class="btn btn-primary">Search</button>
+
+      </form>
+
+    </div>
 
     <br><br>
 
@@ -50,7 +54,7 @@
 
             <div id="youtube-video">
 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/zSWdZVtXT7E" frameborder="0"
+                <iframe id="embeded-video" width="560" height="315" src="https://www.youtube.com/embed/zSWdZVtXT7E" frameborder="0"
                         allowfullscreen></iframe>
 
             </div>
@@ -66,5 +70,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/style.js') }}"></script>
 </body>
 </html>
