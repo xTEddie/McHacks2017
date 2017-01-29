@@ -9,8 +9,12 @@ h1 {
 	font-family: "Roboto";
 	font-color: #b31217;
 	font-size: 60px;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 	border-radius: 10px;
   	background: #b31217;
+  	padding-left: 15px;
+  	padding-right: 15px;
+  	padding-bottom: 10px;
 }
 
 
