@@ -62,6 +62,7 @@ def search_keywords(youtube_url, keyword):
     status_code, content = transcribe_video(youtube_url)
 
     if not content:
+        print("NO CONTENT")
         return timestamps
 
     if status_code == OK:
@@ -71,8 +72,8 @@ def search_keywords(youtube_url, keyword):
         for node in tree:
 
             if keyword in node.text:
-                # print(node.text)
-                # print(node.attrib)
+                print(node.text)
+                print(node.attrib)
                 timestamps.append(float(node.attrib["start"]))
 
     return timestamps

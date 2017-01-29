@@ -20,6 +20,8 @@ $(document).ready(function() {
         if(keyword.length == 0) return;
         console.log(keyword);
 
+        results.html(""); // Delete content in table
+        
         var url = $("#embedded-video").attr("src");
         console.log(url);    
 
@@ -35,11 +37,6 @@ $(document).ready(function() {
                 var results = $("#results");
 
                 var data_size = Object.keys(data).length;                
-
-                if(data_size === 0){
-                    results.html(""); // Delete content in table
-                    return;
-                }
 
                 var output = "";
                 

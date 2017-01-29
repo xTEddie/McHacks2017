@@ -22,7 +22,7 @@ def searchKeyWord():
     result = search_keywords(url, keyword)
 
     if not result:
-        return json.dump(dict())
+        return jsonify(dict())
 
     return jsonify(timeStamp(result))
 
