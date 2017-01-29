@@ -1,3 +1,10 @@
+h1 {
+	font-family: "Roboto", Arial, sans-serif;
+}
+h1.gle{
+	font-family: "Relish Pro", "Futura", sans-serif;
+}
+
 #youtube-video{
 	background-color: #000000;
 	width: 100%;
