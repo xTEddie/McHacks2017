@@ -1,11 +1,41 @@
-#youtube-video{
-	background-color: #000000;
-	max-width: 854px;
-	max-height: 480px;
+
+body {
+	font-family: Arial;
+	font-color: #000000;
+	background-color: #f1f1f1;
 }
 
-#vid{
-	width: 100%; 
-	height: 100%;
+h1 {
+	font-family: "Roboto";
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	border-radius: 10px;
+  background: #b31217;
+  padding-bottom: 10px;
+	padding-top: 5px;
+	padding-left: 20px;
+	min-width: 150px;
+	max-width: 150px;
+	margin-left: 15px;
+}
+
+#youtube-video{
+	background-color: #000000;
+	width: 100%;
+}
+
+#embedded-video{
 	align-items: center;
+}
+
+#footer {
+
+	color: #FFFFFF;
+
+}
+
+#results {
+
+	background-color: transparent;
+	border: none;
+
 }

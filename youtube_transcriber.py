@@ -1,6 +1,7 @@
 import requests
 from urllib.parse import urlparse, parse_qs
 from xml.etree import ElementTree
+from youtube_ghost import get_transcribe_url
 
 OK = 200
 
@@ -18,12 +19,16 @@ def get_video_id(url):
     if not url:
         return ""
 
+    # If URL is embedded
+    if "embed" in url:
+        return url.split("/")[-1]
+
     parse_result = urlparse(url)
     query = parse_qs(parse_result.query)
     return query["v"][0]
 
 
-def transcribe_video(youtube_url):
+def transcribe_video(youtube_url, ghost=True):
     """ Transcribe YouTube video.
 
     Args:
@@ -34,7 +39,13 @@ def transcribe_video(youtube_url):
     """
 
     id = get_video_id(youtube_url)
-    url = "http://video.google.com/timedtext?lang=en&v={}".format(id)
+
+    if not ghost:
+        url = "http://video.google.com/timedtext?lang=en&v={}".format(id)
+    else:
+        url = get_transcribe_url("https://www.youtube.com/watch?v={}".format(id))
+
+    print(url)
     response = requests.get(url)
 
     return response.status_code, response.content
@@ -58,6 +69,7 @@ def search_keywords(youtube_url, keyword):
     status_code, content = transcribe_video(youtube_url)
 
     if not content:
+        print("NO CONTENT")
         return timestamps
 
     if status_code == OK:
@@ -67,8 +79,8 @@ def search_keywords(youtube_url, keyword):
         for node in tree:
 
             if keyword in node.text:
-                # print(node.text)
-                # print(node.attrib)
+                print(node.text)
+                print(node.attrib)
                 timestamps.append(float(node.attrib["start"]))
 
     return timestamps
